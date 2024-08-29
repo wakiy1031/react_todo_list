@@ -11,7 +11,7 @@ type Props = {
 
 export const AddTodo: FC<Props> = ({ inputValue, onChangeTodoText, onClickAdd }) => {
     return (
-        <Flex gap="md">
+        <Flex gap="md" mb="4">
             <BaseInput type="text" placeholder="TODOを入力" value={inputValue} onChange={onChangeTodoText}  />
             <BaseButton onClick={onClickAdd} colorScheme="blue">追加</BaseButton>
         </Flex>

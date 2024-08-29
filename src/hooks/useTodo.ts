@@ -26,5 +26,9 @@ export const useTodo = () => {
         }
     }
 
-    return { inputValue, todos, onChangeTodoText, onClickAdd }
+    const onClickDelete = (id: number) => {
+        setTodos(todos.filter(todo => todo.id !== id))
+    }
+
+    return { inputValue, todos, onChangeTodoText, onClickAdd, onClickDelete }
 }

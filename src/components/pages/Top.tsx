@@ -4,7 +4,7 @@ import { TodoList } from '../molecules/TodoList'
 import { useTodo } from '../../hooks/useTodo'
 
 export const Top: FC = () => {
-    const { inputValue, todos, onChangeTodoText, onClickAdd } = useTodo()
+    const { inputValue, todos, onChangeTodoText, onClickAdd, onClickDelete } = useTodo()
 
     return (
         <div>
@@ -14,7 +14,7 @@ export const Top: FC = () => {
                 onChangeTodoText={onChangeTodoText}
                 onClickAdd={onClickAdd}
             />
-            <TodoList todos={todos} />
+            <TodoList todos={todos} onClickDelete={onClickDelete} />
         </div>
     )
 }

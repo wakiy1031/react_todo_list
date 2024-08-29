@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import { AddTodo } from '../molecules/AddTodo'
-import { TodoList } from '../molecules/TodoList'
+import { TodoList } from '../organisms/TodoList'
 import { useTodo } from '../../hooks/useTodo'
 import { Box, Text } from '@yamada-ui/react'
 
 export const Top: FC = () => {
-    const { inputValue, todos, onChangeTodoText, onClickAdd, onClickDelete, toggleTodoCompletion, todoCounts } = useTodo()
+    const { inputValue, todos, onChangeTodoText, onClickAdd, onClickDelete, toggleTodoCompletion, onEditTodo, todoCounts } = useTodo()
 
     return (
         <Box>
@@ -22,6 +22,7 @@ export const Top: FC = () => {
                 todos={todos} 
                 onClickDelete={onClickDelete} 
                 toggleTodoCompletion={toggleTodoCompletion}
+                onEditTodo={onEditTodo}
             />
         </Box>
     )

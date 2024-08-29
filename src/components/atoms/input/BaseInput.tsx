@@ -3,7 +3,7 @@ import React, { FC } from "react";
 
 type Props = {
     type: string;
-    placeholder: string;
+    placeholder?: string;
     value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }

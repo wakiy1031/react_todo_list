@@ -36,6 +36,12 @@ export const useTodo = () => {
         ))
     }
 
+    const onEditTodo = (id: number, newText: string) => {
+        setTodos(todos.map(todo =>
+            todo.id === id ? { ...todo, text: newText } : todo
+        ))
+    }
+
     const todoCounts = useMemo(() => {
         const total = todos.length;
         const completed = todos.filter(todo => todo.completed).length;
@@ -43,5 +49,5 @@ export const useTodo = () => {
         return { total, completed, uncompleted };
     }, [todos]);
 
-    return { inputValue, todos, onChangeTodoText, onClickAdd, onClickDelete, toggleTodoCompletion, todoCounts }
+    return { inputValue, todos, onChangeTodoText, onClickAdd, onClickDelete, toggleTodoCompletion, onEditTodo, todoCounts }
 }

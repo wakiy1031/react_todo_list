@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 
 export type Todo = {
     id: number;
@@ -30,5 +30,18 @@ export const useTodo = () => {
         setTodos(todos.filter(todo => todo.id !== id))
     }
 
-    return { inputValue, todos, onChangeTodoText, onClickAdd, onClickDelete }
+    const toggleTodoCompletion = (id: number) => {
+        setTodos(todos.map(todo =>
+            todo.id === id ? { ...todo, completed: !todo.completed } : todo
+        ))
+    }
+
+    const todoCounts = useMemo(() => {
+        const total = todos.length;
+        const completed = todos.filter(todo => todo.completed).length;
+        const uncompleted = total - completed;
+        return { total, completed, uncompleted };
+    }, [todos]);
+
+    return { inputValue, todos, onChangeTodoText, onClickAdd, onClickDelete, toggleTodoCompletion, todoCounts }
 }

@@ -32,11 +32,6 @@ export const TodoList: FC<Props> = ({ todos, onClickDelete, toggleTodoCompletion
         }
     }
 
-    const truncateText = (text: string, maxLength: number) => {
-        if (text.length <= maxLength) return text;
-        return text.slice(0, maxLength) + '...';
-    }
-
     return (
         <Box>
             {todos.map((todo) => (
@@ -64,12 +59,12 @@ export const TodoList: FC<Props> = ({ todos, onClickDelete, toggleTodoCompletion
                                 as="span"
                                 textDecoration={todo.completed ? 'line-through' : 'none'}
                                 title={todo.text}
-                                width="200px"
+                                width="300px"
                                 overflow="hidden"
                                 textOverflow="ellipsis"
                                 whiteSpace="nowrap"
                             >
-                                {truncateText(todo.text, 20)}
+                                {todo.text}
                             </Text>
                             <BaseButton onClick={() => setEditingTodoId(todo.id)} colorScheme="blue">編集</BaseButton>
                             <BaseButton onClick={() => handleDeleteClick(todo.id)} colorScheme="red">削除</BaseButton>

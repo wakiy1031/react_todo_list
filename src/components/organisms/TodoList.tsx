@@ -16,18 +16,18 @@ type Props = {
 
 export const TodoList: FC<Props> = ({ todos, onClickDelete, toggleTodoCompletion, onEditTodo }) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const [todoToDelete, setTodoToDelete] = useState<number | null>(null)
+    const [todoDeleteId, setTodoDeleteId] = useState<number | null>(null)
     const [editingTodoId, setEditingTodoId] = useState<number | null>(null)
 
     const handleDeleteClick = (id: number) => {
-        setTodoToDelete(id)
+        setTodoDeleteId(id)
         onOpen()
     }
 
     const handleConfirmDelete = () => {
-        if (todoToDelete !== null) {
-            onClickDelete(todoToDelete)
-            setTodoToDelete(null)
+        if (todoDeleteId !== null) {
+            onClickDelete(todoDeleteId)
+            setTodoDeleteId(null)
             onClose()
         }
     }

@@ -1,0 +1,34 @@
+{
+  "hash": "9d1069d1",
+  "configHash": "8b9fda1f",
+  "lockfileHash": "a369df08",
+  "browserHash": "7fef4fb3",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "5785fe0e",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "9c8dfc37",
+      "needsInterop": true
+    },
+    "@yamada-ui/react": {
+      "src": "../../node_modules/@yamada-ui/react/dist/index.mjs",
+      "file": "@yamada-ui_react.js",
+      "fileHash": "327452ea",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-YUNTBJI6": {
+      "file": "chunk-YUNTBJI6.js"
+    },
+    "chunk-45FXRYJS": {
+      "file": "chunk-45FXRYJS.js"
+    }
+  }
+}
